@@ -1,13 +1,13 @@
+// src/components/Portfolio/Portfolio.js
 import React from 'react';
 import './Portfolio.css';
 import { FaGithub, FaLinkedin, FaTwitter, FaWhatsapp, FaFacebookF, FaEnvelope } from 'react-icons/fa';
 
 const Portfolio = () => {
   return (
-    <div id="portfolio" className="portfolio-container">
+    <div id="portfolio" className="portfolio-container"> {/* Ajout de l'attribut id */}
       <h2 className="portfolio-title">Mes Projets</h2>
       <div className="portfolio-grid">
-        {/* Exemple de projet */}
         <div className="portfolio-item">
           <h3>Projet 1</h3>
           <p>Description du projet.</p>
@@ -20,7 +20,6 @@ const Portfolio = () => {
       <div className="social-links">
         <h3>Retrouvez-moi sur :</h3>
         <div className="icons">
-          {/* Icônes des réseaux sociaux */}
           <a href="https://github.com/rosspamb" target="_blank" rel="noopener noreferrer">
             <FaGithub />
           </a>
