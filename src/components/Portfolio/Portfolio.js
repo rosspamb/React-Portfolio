@@ -1,21 +1,62 @@
-// src/components/Portfolio/Portfolio.js
 import React from 'react';
 import './Portfolio.css';
 import { FaGithub, FaLinkedin, FaTwitter, FaWhatsapp, FaFacebookF, FaEnvelope } from 'react-icons/fa';
 
+// Importation des images avec les bonnes extensions PNG
+import project1Image from '../../assets/Projet1.PNG';
+import project2Image from '../../assets/Projet2.PNG';
+import project3Image from '../../assets/Projet3.PNG';
+import project4Image from '../../assets/Projet4.PNG';
+import project5Image from '../../assets/Projet5.PNG';
+
+const projects = [
+  {
+    title: "Projet 1",
+    description: "Description du projet 1.",
+    image: project1Image,  // Utilisation des images importées
+    link: "https://sonal-three.vercel.app/login"
+  },
+  {
+    title: "Projet 2",
+    description: "Description du projet 2.",
+    image: project2Image,
+    link: "https://tchikeva.vercel.app/"
+  },
+  {
+    title: "Projet 3",
+    description: "Description du projet 3.",
+    image: project3Image,
+    link: "https://angular-mocha.vercel.app/"
+  },
+  {
+    title: "Projet 4",
+    description: "Description du projet 4.",
+    image: project4Image,
+    link: "https://esu-vykk.vercel.app/"
+  },
+  {
+    title: "Projet 5",
+    description: "Description du projet 5.",
+    image: project5Image,
+    link: "https://devstyle-chi.vercel.app/"
+  }
+];
+
 const Portfolio = () => {
   return (
-    <div id="portfolio" className="portfolio-container"> {/* Ajout de l'attribut id */}
+    <div id="portfolio" className="portfolio-container">
       <h2 className="portfolio-title">Mes Projets</h2>
       <div className="portfolio-grid">
-        <div className="portfolio-item">
-          <h3>Projet 1</h3>
-          <p>Description du projet.</p>
-        </div>
-        <div className="portfolio-item">
-          <h3>Projet 2</h3>
-          <p>Description du projet.</p>
-        </div>
+        {projects.map((project, index) => (
+          <div className="portfolio-item" key={index}>
+            <img src={project.image} alt={project.title} className="project-image" />
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
+              Voir le projet
+            </a>
+          </div>
+        ))}
       </div>
       <div className="social-links">
         <h3>Retrouvez-moi sur :</h3>
